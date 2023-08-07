@@ -1,0 +1,32 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Length Test</title>
+</head>
+<body>
+    <h1>Length Test</h1>
+    <div>
+        <label for="inputField">Enter a string or an array: </label>
+        <input type="text" id="inputField">
+    </div>
+    <button onclick="displayLength()">Get Length</button>
+    <p id="result"></p>
+
+    <script src="length.js"></script>
+    <script>
+        function displayLength() {
+            const input = document.getElementById("inputField").value;
+
+            // Try parsing the input as JSON to handle both strings and arrays
+            try {
+                const parsedInput = JSON.parse(input);
+                const length = getLength(parsedInput);
+                document.getElementById("result").innerText = `Length: ${length}`;
+            } catch (error) {
+                document.getElementById("result").innerText = "Invalid input.";
+            }
+        }
+    </script>
+</body>
+</html>

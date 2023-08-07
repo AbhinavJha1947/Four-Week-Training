@@ -1,0 +1,23 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting Test</title>
+</head>
+<body>
+    <h1>Greeting Test</h1>
+    <label for="nameInput">Enter your name: </label>
+    <input type="text" id="nameInput">
+    <button onclick="showGreeting()">Show Greeting</button>
+    <p id="greetingResult"></p>
+
+    <script src="greet.js"></script>
+    <script>
+        function showGreeting() {
+            const name = document.getElementById("nameInput").value;
+            const greeting = greet(name);
+            document.getElementById("greetingResult").innerText = greeting;
+        }
+    </script>
+</body>
+</html>

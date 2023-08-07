@@ -1,0 +1,35 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Information</title>
+</head>
+<body>
+    <h1>Car Information</h1>
+    <div>
+        <label for="makeInput">Make: </label>
+        <input type="text" id="makeInput">
+    </div>
+    <div>
+        <label for="modelInput">Model: </label>
+        <input type="text" id="modelInput">
+    </div>
+    <div>
+        <label for="yearInput">Year: </label>
+        <input type="number" id="yearInput">
+    </div>
+    <button onclick="displayCarInfo()">Display Car Info</button>
+
+    <script src="car.js"></script>
+    <script>
+        function displayCarInfo() {
+            const make = document.getElementById("makeInput").value;
+            const model = document.getElementById("modelInput").value;
+            const year = parseInt(document.getElementById("yearInput").value);
+
+            const car = new Car(make, model, year);
+            car.displayCarInfo();
+        }
+    </script>
+</body>
+</html>
